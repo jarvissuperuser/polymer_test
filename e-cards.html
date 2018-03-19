@@ -1,0 +1,30 @@
+<link rel="import" href="bower_components/polymer/polymer.html" />
+<link rel="import" href="src/element-main.html" />
+
+<dom-module>
+    <template>
+        <style>
+            :host{
+                display: inline;
+            }
+            
+        </style>
+        <div>
+            {{card}}
+        </div>
+    </template>
+    <script>
+        class ECards extends Polymer.Elements {
+            static get is() {
+                return 'e-cards';
+            }
+            static get properties() {
+                return {
+                    type: "String"
+
+                };
+
+            }
+        }
+    </script>
+</dom-module>

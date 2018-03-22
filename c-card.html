@@ -1,0 +1,41 @@
+<link rel="import" href="/bower_components/polymer/polymer-element.html" />
+<link rel="import" href="/bower_components/polymer/lib/elements/dom-repeat.html" />
+<link rel="import" href="/e-cards.html" />
+
+<dom-module id="c-card">
+
+    <template>
+        <style>
+            :host{
+                display: inline-block;
+            }
+            
+        </style>
+        <dom-repeat items='[[looper]]' as='asit'>
+            <template>
+                <e-cards card={{asit}}></e-cards>
+            </template>
+    </dom-repeat>
+    </template>
+    <script>
+        class CCard extends Polymer.Element {
+            static get is() {
+                return 'c-card';
+            }
+            static get properties() {
+                return {
+                    prop1: {
+                        type: "String",
+                        value: "test"
+                    },
+                    looper: {
+                        type: Array,
+                        value: () => [1, 2, 3, 4, 5]
+                    }
+                };
+
+            }
+        }
+        window.customElements.define(CCard.is, CCard);
+    </script>
+</dom-module>

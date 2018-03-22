@@ -1,31 +1,33 @@
-<link rel="import" href="bower_components/polymer/polymer-element.html" />
-<!-- <link rel="import" href="src/element-main.html" /> -->
+<link rel="import" href="/bower_components/polymer/polymer-element.html" />
+<link rel="import" href="/bower_components/paper-card/paper-card.html" />
 
-<dom-module>
+<dom-module id="e-cards">
     <template>
         <style>
             :host{
-                display: inline;
+                display: inline-block;
             }
             
         </style>
-        <div>
-            {{card}}
-        </div>
+            <paper-card heading='[[card]]'>
+                <div class="card-content">Card::[[card]]</div>
+            </paper-card>
     </template>
     <script>
-        class ECards extends Polymer.Elements {
+        class ECards extends Polymer.Element {
             static get is() {
                 return 'e-cards';
             }
             static get properties() {
                 return {
-                    type: "String",
-                    value: "test"
-
+                    card: {
+                        type: "String",
+                        value: "test"
+                    }
                 };
 
             }
         }
+        window.customElements.define(ECards.is, ECards);
     </script>
 </dom-module>

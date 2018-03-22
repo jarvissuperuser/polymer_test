@@ -1,16 +1,19 @@
 <link rel="import" href="/bower_components/polymer/polymer-element.html" />
 <link rel="import" href="/bower_components/paper-card/paper-card.html" />
-
+<link rel="import" href="/bower_components/iron-icons/iron-icons.html" />
+<link rel="import" href="/bower_components/iron-icons/image-icons.html" />
 <dom-module id="e-cards">
     <template>
         <style>
             :host{
                 display: inline-block;
             }
-            
+            paper-card{
+                color: pink;
+            }
         </style>
             <paper-card heading='[[card]]'>
-                <div class="card-content">Card::[[card]]</div>
+                <div class="card-content"> <iron-icon icon="fruit:cherry"></iron-icon> [[card]]</div>
             </paper-card>
     </template>
     <script>
